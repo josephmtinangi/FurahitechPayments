@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    tools:context="com.furahitechstudio.furahitechpay.activities.PayCard">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/AppBarLayout"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="@dimen/dimen_20dp"
+            android:elevation="@dimen/dimen_4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:targetApi="lollipop">
+            <include
+                android:id="@+id/toolBar"
+                layout="@layout/layout_default_toolbar"/>
+            <include
+                android:id="@+id/toolBarExtended"
+                layout="@layout/layout_extended_toolbar"/>
+        </android.support.design.widget.AppBarLayout>
+        <android.support.v4.widget.NestedScrollView
+            android:background="@color/colorBackground"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.CardView
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardBackgroundColor="@android:color/white"
+                    card_view:cardCornerRadius="@dimen/dimen_2dp"
+                    card_view:cardElevation="@dimen/dimen_2dp"
+                    tools:targetApi="lollipop">
+                    <LinearLayout
+                        android:padding="@dimen/dimen_16dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="@string/customer_details"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="@dimen/text_16sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="@dimen/dimen_16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:paddingTop="@dimen/dimen_10dp"
+                                android:gravity="top"
+                                android:layout_gravity="center_vertical"
+                                android:focusable="false"
+                                android:background="@android:color/white"
+                                android:inputType="text"
+                                android:textSize="@dimen/text_16sp"
+                                android:id="@+id/customerName"
+                                android:textColor="@color/colorTextPrimary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:hint="@string/full_name" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_marginTop="@dimen/dimen_16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:paddingTop="@dimen/dimen_10dp"
+                                android:gravity="top"
+                                android:layout_gravity="center_vertical"
+                                android:focusable="false"
+                                android:background="@android:color/white"
+                                android:inputType="textEmailAddress"
+                                android:textSize="@dimen/text_16sp"
+                                android:id="@+id/customerEmail"
+                                android:textColor="@color/colorTextPrimary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:hint="@string/full_email" />
+                        </android.support.design.widget.TextInputLayout>
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:elevation="@dimen/dimen_2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardBackgroundColor="@android:color/white"
+                    card_view:cardCornerRadius="@dimen/dimen_2dp"
+                    card_view:cardElevation="@dimen/dimen_2dp"
+                    tools:targetApi="lollipop">
+                    <LinearLayout
+                        android:padding="@dimen/dimen_16dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="@string/card_details"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="@dimen/text_16sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <com.stripe.android.view.CardInputWidget
+                            android:layout_marginTop="@dimen/dimen_16dp"
+                            android:id="@+id/card_input_widget"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+                        <TextView
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:text="@string/payment_desc"
+                            android:textColor="@color/colorTextSecondary"
+                            android:textSize="@dimen/text_16sp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <TextView
+                            android:lineSpacingExtra="@dimen/dimen_8dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:textColor="@color/colorTextPrimary"
+                            android:id="@+id/paymentDescription"
+                            android:textSize="@dimen/text_15sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <Button
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="@dimen/dimen_20dp"
+                    android:textStyle="bold"
+                    android:padding="@dimen/dimen_16dp"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:id="@+id/processPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/dimen_2dp"
+                    android:translationZ="@dimen/dimen_2dp"
+                    android:stateListAnimator="@null"
+                    android:background="@color/colorAccent"
+                    android:text="@string/pay_now"
+                    android:textSize="@dimen/text_15sp"
+                    android:gravity="center"
+                    tools:targetApi="lollipop" />
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
